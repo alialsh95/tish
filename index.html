@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAIF | طيف — عالم فاخر وحالم</title>
-    <!-- Google Fonts: Cairo & Cinzel -->
+    <!-- Google Fonts: Cairo, Tajawal & Cinzel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Cinzel:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&family=Cinzel:wght@400;600;700;900&display=swap" rel="stylesheet">
     
     <style>
         /* ==========================================
@@ -38,7 +38,7 @@
             scroll-behavior: smooth;
             background-color: var(--bg-deep);
             color: var(--text-main);
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
             overflow-x: hidden;
         }
 
@@ -46,6 +46,7 @@
             background: var(--bg-deep);
             min-height: 100vh;
             position: relative;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
         }
 
         /* Background Stars & Soft Blobs */
@@ -60,24 +61,14 @@
             background: var(--bg-deep);
         }
 
-        .stars-container {
+        /* Dynamic Magical Starry Sky Canvas */
+        #starryCanvas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-            background-image: 
-                radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 40px 70px, var(--soft-pink), rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 90px 40px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 160px 120px, var(--text-muted), rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 230px 180px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 300px 90px, var(--soft-pink), rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 380px 250px, #ffffff, rgba(0,0,0,0));
-            background-repeat: repeat;
-            background-size: 450px 350px;
-            opacity: 0.35;
         }
 
         .blob {
@@ -140,7 +131,7 @@
             color: #fff;
             padding: 0.4rem 1.1rem;
             border-radius: 50px;
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
             font-size: 0.8rem;
             letter-spacing: 1px;
             cursor: pointer;
@@ -163,6 +154,7 @@
             text-align: center;
             position: relative;
             padding: 0 1rem;
+            z-index: 2;
         }
 
         .hero-taif {
@@ -178,7 +170,7 @@
         }
 
         .hero-arabic {
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
             font-size: clamp(1.3rem, 2.5vw, 2.2rem);
             font-weight: 400;
             color: var(--text-muted);
@@ -201,7 +193,7 @@
             padding: 0.8rem 2.2rem;
             border-radius: 100px;
             font-size: 0.9rem;
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
             font-weight: 600;
             letter-spacing: 1.5px;
             cursor: pointer;
@@ -644,7 +636,58 @@
             opacity: 1;
         }
 
-        /* SECTION NEW: TAIF'S FRIEND (شهادت / صديقة طيف) */
+        /* SECTION NEW: WHAT'S BEST IN TAIF (أجمل ما في طيف) */
+        .section-best-taif {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .best-taif-canvas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            min-height: 180px;
+            align-items: center;
+        }
+
+        .best-taif-node {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            font-size: 1.15rem;
+            padding: 0.8rem 1.8rem;
+            background: rgba(31, 16, 53, 0.4);
+            border: 1px solid rgba(244, 114, 182, 0.25);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            color: var(--text-main);
+        }
+
+        .best-taif-node:hover {
+            background: var(--soft-pink);
+            color: var(--bg-deep);
+            transform: scale(1.04);
+        }
+
+        .best-taif-popup {
+            margin-top: 2rem;
+            font-size: 1.05rem;
+            color: var(--soft-pink);
+            min-height: 45px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            line-height: 1.8;
+            padding: 0 1rem;
+        }
+
+        .best-taif-popup.active {
+            opacity: 1;
+        }
+
+        /* SECTION NEW: TAIF'S FRIEND (صديقة طيف - شهأد) */
         .section-friend {
             max-width: 900px;
             margin: 0 auto;
@@ -678,7 +721,7 @@
             margin: 0 auto;
         }
 
-        /* SECTION 07: STATE OF TAIF & PASSPORT */
+        /* SECTION 07: STATE OF TAIF & FAVORITE COLORS (Replaced Passport) */
         .section-state {
             max-width: 1050px;
             margin: 0 auto;
@@ -753,82 +796,67 @@
 
         .state-image-box img {
             width: 100%; height: 100%;
-            object-fit: cover;
+            object-fit: object-fit;
         }
 
-        /* TAIF PASSPORT EXPERIENCE */
-        .passport-container {
+        /* TAIF'S FAVORITE COLORS EXPERIENCE (Replacing Passport) */
+        .colors-container {
             margin-top: 4rem;
             text-align: center;
         }
 
-        .passport-card {
-            width: 100%;
-            max-width: 430px;
+        .colors-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 800px;
             margin: 1.5rem auto 0 auto;
+        }
+
+        .color-card {
             background: linear-gradient(135deg, #160c28, #261142);
             border: 1px solid rgba(244, 114, 182, 0.25);
-            border-radius: 14px;
+            border-radius: 16px;
             padding: 2.2rem 1.8rem;
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            text-align: right;
+            text-align: center;
             position: relative;
+            transition: var(--transition-smooth);
         }
 
-        .passport-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 1rem;
-            margin-bottom: 1.2rem;
+        .color-card:hover {
+            border-color: var(--soft-pink);
+            transform: translateY(-4px);
         }
 
-        .passport-header h4 {
+        .color-dot {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto 1.2rem auto;
+            box-shadow: 0 0 15px rgba(255,255,255,0.2);
+        }
+
+        .color-dot.cyan {
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+        }
+
+        .color-dot.pink {
+            background: linear-gradient(135deg, #f472b6, #db2777);
+        }
+
+        .color-card h4 {
             font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            color: var(--soft-pink);
+            font-size: 1.2rem;
+            letter-spacing: 1.5px;
+            color: var(--text-main);
+            margin-bottom: 0.6rem;
         }
 
-        .passport-body {
-            display: flex;
-            gap: 1.2rem;
-            align-items: center;
-        }
-
-        .passport-photo {
-            width: 90px;
-            height: 120px;
-            border-radius: 6px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.15);
-            flex-shrink: 0;
-        }
-
-        .passport-photo img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-        }
-
-        .passport-details {
-            display: flex;
-            flex-direction: column;
-            gap: 0.7rem;
-            flex-grow: 1;
-        }
-
-        .p-field span {
-            font-size: 0.65rem;
-            color: rgba(255,255,255,0.4);
-            letter-spacing: 1px;
-            display: block;
-            font-family: 'Cinzel', serif;
-        }
-
-        .p-field strong {
+        .color-card p {
             font-size: 0.95rem;
-            color: #fff;
+            color: var(--text-muted);
+            line-height: 1.8;
         }
 
         /* ELEGANT ENDING FOOTER */
@@ -909,7 +937,7 @@
 
         /* Responsive Breakpoints */
         @media (max-width: 968px) {
-            .section-who, .state-grid, .moments-grid {
+            .section-who, .state-grid, .moments-grid, .colors-grid {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
@@ -927,9 +955,9 @@
 </head>
 <body>
 
-    <!-- Liquid Dark Background with Soft Stars -->
+    <!-- Liquid Dark Background with Magical Starry Sky Canvas -->
     <div class="liquid-bg">
-        <div class="stars-container"></div>
+        <canvas id="starryCanvas"></canvas>
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
     </div>
@@ -953,8 +981,9 @@
             <li class="menu-item"><a href="#games" class="menu-link">04 — GAMES</a></li>
             <li class="menu-item"><a href="#meaning" class="menu-link">05 — MEANING</a></li>
             <li class="menu-item"><a href="#feelings" class="menu-link">06 — FEELINGS</a></li>
-            <li class="menu-item"><a href="#friend" class="menu-link">07 — TAIF'S FRIEND</a></li>
-            <li class="menu-item"><a href="#state" class="menu-link">08 — STATE OF TAIF</a></li>
+            <li class="menu-item"><a href="#best" class="menu-link">07 — BEST IN TAIF</a></li>
+            <li class="menu-item"><a href="#friend" class="menu-link">08 — TAIF'S FRIEND</a></li>
+            <li class="menu-item"><a href="#state" class="menu-link">09 — STATE OF TAIF</a></li>
         </ul>
     </div>
 
@@ -1095,7 +1124,23 @@
             <div class="feeling-popup" id="feelingPopup">انقر على أي شعور لاستكشاف أثره الداخلي...</div>
         </section>
 
-        <!-- SECTION NEW: TAIF'S FRIEND (صديقة طيف) -->
+        <!-- SECTION NEW: WHAT'S BEST IN TAIF (أجمل ما في طيف) -->
+        <section class="section-best-taif" id="best">
+            <div class="section-header">
+                <h2>WHAT'S BEST IN TAIF</h2>
+                <h3 class="hero-arabic">أجمل ما في طيف</h3>
+            </div>
+            <div class="best-taif-canvas">
+                <div class="best-taif-node" data-text="حواجبها المرسومة بعناية تمنح ملامحها نظرة عميقة وساحرة تفيض بالجمال الهادئ.">حواجب طيف</div>
+                <div class="best-taif-node" data-text="عيناها تشبهان الأفق الواسع في ليلة هادئة، تحكيان قصصاً من النور والسكينة.">عيون طيف</div>
+                <div class="best-taif-node" data-text="ابتسامتها الرقيقة قادرة على بث الدفء والطمأنينة في أقسى الأيام وأكثرها برودة.">ابتسامتها</div>
+                <div class="best-taif-node" data-text="ضحكتها الصافية تعيد ترتيب تفاصيل المكان وتملأ الكون بهجة ونقاءً خالصاً.">ضحكتها</div>
+                <div class="best-taif-node" data-text="ملامحها الهادئة تشبه سكون الغيوم ورقة النسيم، تجمع بين الرقة والملوكية.">ملامحها</div>
+            </div>
+            <div class="best-taif-popup" id="bestTaifPopup">انقر على أي عنصر لاكتشاف سر جماله...</div>
+        </section>
+
+        <!-- SECTION NEW: TAIF'S FRIEND (صديقة طيف - شهأد) -->
         <section id="friend">
             <div class="section-friend">
                 <div class="friend-content">
@@ -1108,7 +1153,7 @@
             </div>
         </section>
 
-        <!-- SECTION 07: STATE OF TAIF & PASSPORT -->
+        <!-- SECTION 07: STATE OF TAIF & FAVORITE COLORS (Replacing Passport) -->
         <section class="section-state" id="state">
             <div class="state-grid">
                 <div class="state-info">
@@ -1141,34 +1186,22 @@
                 </div>
             </div>
 
-            <!-- TAIF PASSPORT -->
-            <div class="passport-container">
+            <!-- TAIF'S FAVORITE COLORS EXPERIENCE -->
+            <div class="colors-container">
                 <div class="section-header" style="margin-bottom: 1.2rem;">
-                    <h3 style="font-family:'Cinzel',serif; letter-spacing:2px; color:var(--soft-pink);">TAIF PASSPORT</h3>
+                    <h3 style="font-family:'Cinzel',serif; letter-spacing:2px; color:var(--soft-pink);">TAIF'S FAVORITE COLORS</h3>
+                    <h4 class="hero-arabic" style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.3rem;">ألوان طيف المفضلة</h4>
                 </div>
-                <div class="passport-card" id="passportCard">
-                    <div class="passport-header">
-                        <h4>TAIF PASSPORT</h4>
-                        <span style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--gold-accent);">VIP CITIZEN</span>
+                <div class="colors-grid">
+                    <div class="color-card">
+                        <div class="color-dot cyan"></div>
+                        <h4>CYAN / السماوي</h4>
+                        <p>يعكس صفاء السماء المفتوحة وهدوء البحار العميقة، يمنح الروح شعوراً بالاتساع والحرية المطلقة والسلام الداخلي.</p>
                     </div>
-                    <div class="passport-body">
-                        <div class="passport-photo">
-                            <img src="taif-symbol.webp" alt="Taif Symbol" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80'">
-                        </div>
-                        <div class="passport-details">
-                            <div class="p-field">
-                                <span>NAME / الاسم</span>
-                                <strong>TAIF (طيف)</strong>
-                            </div>
-                            <div class="p-field">
-                                <span>STATUS / الحالة</span>
-                                <strong>رئيسة دولة الأطياف</strong>
-                            </div>
-                            <div class="p-field">
-                                <span>ACCESS / التصريح</span>
-                                <strong>دخول مفتوح للقلوب اللطيفة</strong>
-                            </div>
-                        </div>
+                    <div class="color-card">
+                        <div class="color-dot pink"></div>
+                        <h4>PINK / الوردي</h4>
+                        <p>يمثل الدفء، الرقة، والجانب الحالم الحنون في عالم طيف، حيث تبتسم التفاصيل الصغيرة وتزهر المشاعر الصادقة.</p>
                     </div>
                 </div>
             </div>
@@ -1190,8 +1223,99 @@
 
     </div>
 
+    <!-- Hidden HTML5 Audio Element for Background Music -->
+    <audio id="bgAudio" loop preload="auto">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf7f6.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- JavaScript Experience Engine -->
     <script>
+        // Magical Starry Sky Canvas Engine
+        const canvas = document.getElementById('starryCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let stars = [];
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Star {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2 + 0.5;
+                this.baseAlpha = Math.random() * 0.7 + 0.2;
+                this.alpha = this.baseAlpha;
+                this.alphaChange = (Math.random() * 0.02 + 0.005) * (Math.random() < 0.5 ? 1 : -1);
+                
+                // Color variation: white, soft pink, lavender/purple
+                const colorChoice = Math.random();
+                if (colorChoice < 0.6) {
+                    this.color = '#ffffff';
+                } else if (colorChoice < 0.85) {
+                    this.color = '#f472b6'; // soft-pink
+                } else {
+                    this.color = '#d8b4fe'; // text-muted / lavender
+                }
+
+                // Slow movement factor
+                this.vx = (Math.random() - 0.5) * 0.15;
+                this.vy = (Math.random() - 0.5) * 0.15;
+            }
+            update() {
+                this.alpha += this.alphaChange;
+                if (this.alpha > 0.9 || this.alpha < 0.1) {
+                    this.alphaChange = -this.alphaChange;
+                }
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                
+                // Glow effect for selected stars
+                if (this.size > 1.8) {
+                    ctx.shadowBlur = 8;
+                    ctx.shadowColor = this.color;
+                }
+
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // Initialize stars count based on screen size
+        const starsCount = Math.floor((window.innerWidth * window.innerHeight) / 3500);
+        for (let i = 0; i < (starsCount > 120 ? 120 : starsCount); i++) {
+            stars.push(new Star());
+        }
+
+        function animateStars() {
+            ctx.clearRect(0, 0, width, height);
+            stars.forEach(star => {
+                star.update();
+                star.draw();
+            });
+            requestAnimationFrame(animateStars);
+        }
+        animateStars();
+
         // Fullscreen Menu Handling
         const menuToggle = document.getElementById('menuToggle');
         const menuClose = document.getElementById('menuClose');
@@ -1266,17 +1390,43 @@
             });
         });
 
-        // Audio Button Toggle
+        // What's Best in Taif Interactive Nodes
+        const bestTaifNodes = document.querySelectorAll('.best-taif-node');
+        const bestTaifPopup = document.getElementById('bestTaifPopup');
+
+        bestTaifNodes.forEach(node => {
+            node.addEventListener('click', () => {
+                const text = node.getAttribute('data-text');
+                bestTaifPopup.classList.remove('active');
+                setTimeout(() => {
+                    bestTaifPopup.innerText = `"${text}"`;
+                    bestTaifPopup.classList.add('active');
+                }, 100);
+            });
+        });
+
+        // Real Audio Player Toggle Handling
         const musicBtn = document.getElementById('musicBtn');
+        const bgAudio = document.getElementById('bgAudio');
+        bgAudio.volume = 0.3; // soft and gentle volume
         let isPlaying = false;
 
         musicBtn.addEventListener('click', () => {
             isPlaying = !isPlaying;
             if(isPlaying) {
-                musicBtn.innerText = "MUSIC: ON";
-                musicBtn.style.background = "#fff";
-                musicBtn.style.color = "var(--bg-deep)";
+                bgAudio.play().then(() => {
+                    musicBtn.innerText = "MUSIC: ON";
+                    musicBtn.style.background = "#fff";
+                    musicBtn.style.color = "var(--bg-deep)";
+                }).catch(e => {
+                    // Handle autoplay restriction gracefully
+                    isPlaying = false;
+                    musicBtn.innerText = "MUSIC: OFF";
+                    musicBtn.style.background = "transparent";
+                    musicBtn.style.color = "#fff";
+                });
             } else {
+                bgAudio.pause();
                 musicBtn.innerText = "MUSIC: OFF";
                 musicBtn.style.background = "transparent";
                 musicBtn.style.color = "#fff";
