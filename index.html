@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAIF | طيف — عالم فاخر وحالم</title>
-    <!-- Google Fonts: Cairo, Tajawal & Cinzel -->
+    <!-- Google Fonts: Cairo, Tajawal, Cinzel & Alex Brush -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&family=Cinzel:wght@400;600;700;900&family=Alex+Brush&display=swap" rel="stylesheet">
@@ -160,25 +160,36 @@
             z-index: 10;
         }
 
+        .hero-title-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2rem;
+            margin-bottom: 0.4rem;
+        }
+
         .hero-taif {
             font-family: 'Cinzel', serif;
-            font-size: clamp(3.5rem, 12vw, 10rem);
+            font-size: clamp(3.2rem, 10vw, 8rem);
             font-weight: 900;
             letter-spacing: 6px;
             background: linear-gradient(135deg, #ffffff 30%, var(--soft-pink) 70%, var(--magenta) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0;
         }
 
         .hero-arabic {
             font-family: 'Cairo', 'Tajawal', sans-serif;
-            font-size: clamp(1.3rem, 2.5vw, 2.2rem);
-            font-weight: 400;
-            color: var(--text-muted);
-            letter-spacing: 1px;
+            font-size: clamp(3rem, 9.4vw, 7.5rem);
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: 2px;
             margin-bottom: 0.8rem;
+            line-height: 1;
+            text-shadow: 0 0 20px rgba(244, 114, 182, 0.25);
         }
 
         .hero-subtitle {
@@ -303,17 +314,20 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
         }
 
         .image-slider-container {
             width: 100%;
-            max-width: 950px;
-            height: 55vh;
+            max-width: 100%;
+            height: 70vh;
             position: relative;
-            border-radius: 14px;
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: none;
+            border: none;
         }
 
         .slide-item {
@@ -905,14 +919,13 @@
         }
 
         .footer-creator {
-            font-family: 'Alex Brush', cursive;
-            font-size: 2.2rem;
-            color: var(--soft-pink);
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-muted);
             letter-spacing: 1px;
             margin-bottom: 2.5rem;
-            font-weight: 400;
-            opacity: 0.95;
-            text-shadow: 0 0 10px rgba(244,114,182,0.3);
+            font-weight: 300;
+            opacity: 0.7;
         }
 
         .footer-taif {
@@ -1026,7 +1039,7 @@
         <!-- SECTION 01: WELCOME TO TAIF -->
         <section class="section-welcome">
             <h2 class="huge-heading">WELCOME<br>TO TAIF</h2>
-            <h3 class="hero-arabic" style="margin-bottom: 1.2rem;">أهلاً بكم في عالم طيف</h3>
+            <h3 class="hero-arabic" style="font-size: 2.2rem; color: var(--text-muted); margin-bottom: 1.2rem; text-shadow: none;">أهلاً بكم في عالم طيف</h3>
             <p>
                 مساحة رقمية هادئة صُممت لتشبه السكون الذي يعقب المطر، حيث تتداخل التفاصيل الصغيرة واللحظات الدافئة لتخلق عالماً خاصاً ينبض بالجمال والشاعرية الخالصة. هنا حكاية مصممة بعناية لتلامس الوجدان من النظرة الأولى.
             </p>
@@ -1050,7 +1063,7 @@
         <section class="section-moments" id="moments">
             <div class="section-header">
                 <h2>TAIF MOMENTS</h2>
-                <h3 class="hero-arabic">لحظات طيف</h3>
+                <h3 class="hero-arabic" style="font-size: 2rem; color: var(--text-muted); text-shadow: none;">لحظات طيف</h3>
             </div>
             <div class="moments-grid">
                 <div class="moments-image-box">
@@ -1077,7 +1090,7 @@
         <section id="games">
             <div class="section-header">
                 <h2>TAIF’S FAVORITE GAME</h2>
-                <h3 class="hero-arabic">لعبة طيف المفضلة</h3>
+                <h3 class="hero-arabic" style="font-size: 2rem; color: var(--text-muted); text-shadow: none;">لعبة طيف المفضلة</h3>
             </div>
             <div class="single-game-wrapper">
                 <div class="game-card">
@@ -1098,7 +1111,7 @@
             <div class="meaning-center-title">TAIF</div>
             <div class="meaning-content-box">
                 <h2>WHAT DOES TAIF MEAN?</h2>
-                <h3 class="hero-arabic" style="color:var(--soft-pink); margin-bottom: 1rem;">ماذا تعني طيف؟</h3>
+                <h3 class="hero-arabic" style="font-size: 2rem; color:var(--soft-pink); margin-bottom: 1rem; text-shadow: none;">ماذا تعني طيف؟</h3>
                 <p>
                     تعني الأثر الخفيف الذي يتركه المرور الجميل في الروح. تعني النقاء، والهدوء الذي يسبق العواطف الصادقة، والظل الخفيف الذي يضفي طمأنينة على المكان.
                 </p>
@@ -1116,7 +1129,7 @@
         <section class="section-feelings" id="feelings">
             <div class="section-header">
                 <h2>GENTLE FEELINGS</h2>
-                <h3 class="hero-arabic">مشاعر لطيفة</h3>
+                <h3 class="hero-arabic" style="font-size: 2rem; color: var(--text-muted); text-shadow: none;">مشاعر لطيفة</h3>
             </div>
             <div class="feelings-canvas">
                 <div class="feeling-node" data-text="الحب الصادق هو النور الذي لا ينطفئ أبداً في القلب.">حب</div>
@@ -1135,7 +1148,7 @@
         <section class="section-best-taif" id="best">
             <div class="section-header">
                 <h2>WHAT'S BEST IN TAIF</h2>
-                <h3 class="hero-arabic">أجمل ما في طيف</h3>
+                <h3 class="hero-arabic" style="font-size: 2rem; color: var(--text-muted); text-shadow: none;">أجمل ما في طيف</h3>
             </div>
             <div class="best-taif-canvas">
                 <div class="best-taif-node" data-text="حواجبها المرسومة بعناية تمنح ملامحها نظرة عميقة وساحرة تفيض بالجمال الهادئ.">حواجب طيف</div>
@@ -1197,7 +1210,7 @@
             <div class="colors-container">
                 <div class="section-header" style="margin-bottom: 1.2rem;">
                     <h3 style="font-family:'Cinzel',serif; letter-spacing:2px; color:var(--soft-pink);">TAIF'S FAVORITE COLORS</h3>
-                    <h4 class="hero-arabic" style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.3rem;">ألوان طيف المفضلة</h4>
+                    <h4 class="hero-arabic" style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.3rem; text-shadow: none;">ألوان طيف المفضلة</h4>
                 </div>
                 <div class="colors-grid">
                     <div class="color-card">
