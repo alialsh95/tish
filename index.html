@@ -56,9 +56,10 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: -1;
+            z-index: 1; /* تعديل لضمان ظهور النجوم فوق الخلفية السوداء مباشرة */
             overflow: hidden;
             background: var(--bg-deep);
+            pointer-events: none;
         }
 
         /* Dynamic Magical Starry Sky Canvas */
@@ -69,6 +70,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
+            z-index: 2;
         }
 
         .blob {
@@ -76,6 +78,7 @@
             filter: blur(90px);
             opacity: 0.2;
             border-radius: 50%;
+            z-index: 1;
         }
 
         .blob-1 {
@@ -104,7 +107,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 100;
+            z-index: 1000;
             background: rgba(5, 3, 8, 0.85);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -154,7 +157,7 @@
             text-align: center;
             position: relative;
             padding: 0 1rem;
-            z-index: 2;
+            z-index: 10;
         }
 
         .hero-taif {
@@ -212,7 +215,7 @@
             top: 0; left: 0; width: 100vw; height: 100vh;
             background: rgba(5, 3, 8, 0.98);
             backdrop-filter: blur(15px);
-            z-index: 1000;
+            z-index: 2000;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -265,6 +268,8 @@
             transform: translateY(15px);
             transition: opacity 0.6s ease, transform 0.6s ease;
             pointer-events: none;
+            position: relative;
+            z-index: 10;
         }
 
         .main-content.visible {
@@ -405,7 +410,7 @@
             line-height: 1.9;
         }
 
-        /* SECTION 03: TAIF MOMENTS (Single Image + Text List) */
+        /* SECTION 03: TAIF MOMENTS */
         .section-moments {
             max-width: 1100px;
             margin: 0 auto;
@@ -465,7 +470,7 @@
             line-height: 1.7;
         }
 
-        /* SECTION 04: FAVORITE GAME (Single Game Card) */
+        /* SECTION 04: FAVORITE GAME */
         .single-game-wrapper {
             max-width: 700px;
             margin: 0 auto;
@@ -636,7 +641,7 @@
             opacity: 1;
         }
 
-        /* SECTION NEW: WHAT'S BEST IN TAIF (أجمل ما في طيف) */
+        /* SECTION NEW: WHAT'S BEST IN TAIF */
         .section-best-taif {
             text-align: center;
             max-width: 900px;
@@ -687,7 +692,7 @@
             opacity: 1;
         }
 
-        /* SECTION NEW: TAIF'S FRIEND (صديقة طيف - شهأد) */
+        /* SECTION NEW: TAIF'S FRIEND */
         .section-friend {
             max-width: 900px;
             margin: 0 auto;
@@ -721,7 +726,7 @@
             margin: 0 auto;
         }
 
-        /* SECTION 07: STATE OF TAIF & FAVORITE COLORS (Replaced Passport) */
+        /* SECTION 07: STATE OF TAIF & FAVORITE COLORS */
         .section-state {
             max-width: 1050px;
             margin: 0 auto;
@@ -796,10 +801,10 @@
 
         .state-image-box img {
             width: 100%; height: 100%;
-            object-fit: object-fit;
+            object-fit: cover;
         }
 
-        /* TAIF'S FAVORITE COLORS EXPERIENCE (Replacing Passport) */
+        /* TAIF'S FAVORITE COLORS EXPERIENCE */
         .colors-container {
             margin-top: 4rem;
             text-align: center;
@@ -1039,7 +1044,7 @@
             </div>
         </section>
 
-        <!-- SECTION 03: TAIF MOMENTS (Single Image + Text List) -->
+        <!-- SECTION 03: TAIF MOMENTS -->
         <section class="section-moments" id="moments">
             <div class="section-header">
                 <h2>TAIF MOMENTS</h2>
@@ -1066,7 +1071,7 @@
             </div>
         </section>
 
-        <!-- SECTION 04: FAVORITE GAME (Single Game) -->
+        <!-- SECTION 04: FAVORITE GAME -->
         <section id="games">
             <div class="section-header">
                 <h2>TAIF’S FAVORITE GAME</h2>
@@ -1124,7 +1129,7 @@
             <div class="feeling-popup" id="feelingPopup">انقر على أي شعور لاستكشاف أثره الداخلي...</div>
         </section>
 
-        <!-- SECTION NEW: WHAT'S BEST IN TAIF (أجمل ما في طيف) -->
+        <!-- SECTION NEW: WHAT'S BEST IN TAIF -->
         <section class="section-best-taif" id="best">
             <div class="section-header">
                 <h2>WHAT'S BEST IN TAIF</h2>
@@ -1140,7 +1145,7 @@
             <div class="best-taif-popup" id="bestTaifPopup">انقر على أي عنصر لاكتشاف سر جماله...</div>
         </section>
 
-        <!-- SECTION NEW: TAIF'S FRIEND (صديقة طيف - شهأد) -->
+        <!-- SECTION NEW: TAIF'S FRIEND -->
         <section id="friend">
             <div class="section-friend">
                 <div class="friend-content">
@@ -1153,7 +1158,7 @@
             </div>
         </section>
 
-        <!-- SECTION 07: STATE OF TAIF & FAVORITE COLORS (Replacing Passport) -->
+        <!-- SECTION 07: STATE OF TAIF & FAVORITE COLORS -->
         <section class="section-state" id="state">
             <div class="state-grid">
                 <div class="state-info">
@@ -1213,7 +1218,7 @@
                 <h4>عن هذا العالم</h4>
                 <p>مساحة رقمية هادئة صُنعت بكل حب لتخلد تفاصيل ولحظات طيف الجميلة وذكرياتها الدافئة.</p>
                 <div class="footer-contact-info">للتواصل عبر عالم الأطياف الرقمي</div>
-                <div class="footer-creator">صُنع من إيبي</div>
+                <div class="footer-creator">صُنع من AB</div>
             </div>
             <h2 class="footer-taif">TAIF</h2>
             <h3 class="footer-arabic">طيف</h3>
@@ -1223,14 +1228,14 @@
 
     </div>
 
-    <!-- Hidden HTML5 Audio Element for Background Music -->
+    <!-- Hidden HTML5 Audio Element for Background Music (عباس إبراهيم) -->
     <audio id="bgAudio" loop preload="auto">
-        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf7f6.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
 
     <!-- JavaScript Experience Engine -->
     <script>
-        // Magical Starry Sky Canvas Engine
+        // Magical Starry Sky Canvas Engine (مُحدّثة لتكون واضحة وبارزة)
         const canvas = document.getElementById('starryCanvas');
         const ctx = canvas.getContext('2d');
         let width, height;
@@ -1251,28 +1256,27 @@
             reset() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.size = Math.random() * 2 + 0.5;
-                this.baseAlpha = Math.random() * 0.7 + 0.2;
+                this.size = Math.random() * 2.2 + 0.8; // أحجام واضحة ومنوعة
+                this.baseAlpha = Math.random() * 0.8 + 0.3; // إضاءة واضحة وليست معتمة
                 this.alpha = this.baseAlpha;
-                this.alphaChange = (Math.random() * 0.02 + 0.005) * (Math.random() < 0.5 ? 1 : -1);
+                this.alphaChange = (Math.random() * 0.025 + 0.008) * (Math.random() < 0.5 ? 1 : -1);
                 
                 // Color variation: white, soft pink, lavender/purple
                 const colorChoice = Math.random();
-                if (colorChoice < 0.6) {
+                if (colorChoice < 0.55) {
                     this.color = '#ffffff';
-                } else if (colorChoice < 0.85) {
+                } else if (colorChoice < 0.8) {
                     this.color = '#f472b6'; // soft-pink
                 } else {
-                    this.color = '#d8b4fe'; // text-muted / lavender
+                    this.color = '#d8b4fe'; // lavender
                 }
 
-                // Slow movement factor
-                this.vx = (Math.random() - 0.5) * 0.15;
-                this.vy = (Math.random() - 0.5) * 0.15;
+                this.vx = (Math.random() - 0.5) * 0.12;
+                this.vy = (Math.random() - 0.5) * 0.12;
             }
             update() {
                 this.alpha += this.alphaChange;
-                if (this.alpha > 0.9 || this.alpha < 0.1) {
+                if (this.alpha > 0.95 || this.alpha < 0.2) {
                     this.alphaChange = -this.alphaChange;
                 }
                 this.x += this.vx;
@@ -1287,9 +1291,8 @@
                 ctx.globalAlpha = this.alpha;
                 ctx.fillStyle = this.color;
                 
-                // Glow effect for selected stars
-                if (this.size > 1.8) {
-                    ctx.shadowBlur = 8;
+                if (this.size > 1.6) {
+                    ctx.shadowBlur = 10;
                     ctx.shadowColor = this.color;
                 }
 
@@ -1300,9 +1303,8 @@
             }
         }
 
-        // Initialize stars count based on screen size
-        const starsCount = Math.floor((window.innerWidth * window.innerHeight) / 3500);
-        for (let i = 0; i < (starsCount > 120 ? 120 : starsCount); i++) {
+        const starsCount = Math.floor((window.innerWidth * window.innerHeight) / 2800);
+        for (let i = 0; i < (starsCount > 150 ? 150 : starsCount); i++) {
             stars.push(new Star());
         }
 
@@ -1405,10 +1407,10 @@
             });
         });
 
-        // Real Audio Player Toggle Handling
+        // Real Audio Player Toggle Handling (Music On / Music Off)
         const musicBtn = document.getElementById('musicBtn');
         const bgAudio = document.getElementById('bgAudio');
-        bgAudio.volume = 0.3; // soft and gentle volume
+        bgAudio.volume = 0.35;
         let isPlaying = false;
 
         musicBtn.addEventListener('click', () => {
@@ -1419,7 +1421,6 @@
                     musicBtn.style.background = "#fff";
                     musicBtn.style.color = "var(--bg-deep)";
                 }).catch(e => {
-                    // Handle autoplay restriction gracefully
                     isPlaying = false;
                     musicBtn.innerText = "MUSIC: OFF";
                     musicBtn.style.background = "transparent";
