@@ -866,6 +866,57 @@
             object-fit: cover;
         }
 
+        /* SECTION NEW: TAIF ACHIEVEMENTS */
+        .section-achievements {
+            max-width: 1050px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(18,9,31,0.8), rgba(31,16,53,0.4));
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 3.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .achievements-info h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.3rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: 2px;
+        }
+
+        .achievements-info h3 {
+            font-size: 1.25rem;
+            color: var(--soft-pink);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .achievements-info p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 1.8rem;
+        }
+
+        .achievements-image-box {
+            height: 350px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .achievements-image-box img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
         /* TAIF'S FAVORITE COLORS EXPERIENCE */
         .colors-container {
             margin-top: 4rem;
@@ -1005,7 +1056,7 @@
 
         /* Responsive Breakpoints */
         @media (max-width: 968px) {
-            .section-who, .state-grid, .moments-grid, .colors-grid {
+            .section-who, .state-grid, .achievements-grid, .moments-grid, .colors-grid {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
@@ -1015,7 +1066,7 @@
             section {
                 padding: 4rem 5vw;
             }
-            .section-state, .section-friend {
+            .section-state, .section-achievements, .section-friend {
                 padding: 2rem;
             }
         }
@@ -1052,6 +1103,7 @@
             <li class="menu-item"><a href="#best" class="menu-link">BEST IN TAIF</a></li>
             <li class="menu-item"><a href="#friend" class="menu-link">TAIF'S FRIEND</a></li>
             <li class="menu-item"><a href="#state" class="menu-link">STATE OF TAIF</a></li>
+            <li class="menu-item"><a href="#achievements" class="menu-link">Taif Achievements</a></li>
         </ul>
     </div>
 
@@ -1162,7 +1214,7 @@
                 <h2>WHAT DOES TAIF MEAN?</h2>
                 <h3 class="hero-arabic" style="font-size: 2rem; color:var(--soft-pink); margin-bottom: 1rem; text-shadow: none;">ماذا تعني طيف؟</h3>
                 <p>
-طيف.. فتاةٌ في بداية العشرين وكأن العمر لم يفتح لها أبوابه بعد بل تركها معلّقةً بين حلمٍ وسماء.
+طيف.. فتاةٌ في بداية العشرين وكأن العمر لم يفتح لها أبوابه بعد بل تركها معلّقةً بين حلمٍ سماء.
 و في عينيها مستقبلٌ واسع كالسحاب لا تعرف أين ينتهي ولا كم من الأمنيات يسكن خلفه.
 تحلم كثيرًا وكأنها تعرف أن العالم لم يمنحها أجمل أيامها بعد.
 ولعل أجمل ما في طيف أنها ليست مجرد فتاةٍ جميلة بل حكايةٌ جميلة لم تُكتب فصولها كلها بعد.
@@ -1259,9 +1311,27 @@
                     <img src="state-of-taif.jpg" alt="State of Taif" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80'">
                 </div>
             </div>
+        </section>
 
-            <!-- TAIF'S FAVORITE COLORS EXPERIENCE -->
-            <div class="colors-container">
+        <!-- SECTION NEW: TAIF ACHIEVEMENTS -->
+        <section class="section-achievements" id="achievements">
+            <div class="achievements-grid">
+                <div class="achievements-info">
+                    <h2>Taif Achievements</h2>
+                    <h3>إنجازات طيف</h3>
+                    <p>
+                        مساحة مخصصة لكتابة نص عن إنجازات طيف لاحقًا... هنا يمكنك إضافة كافة التفاصيل والإنجازات المميزة.
+                    </p>
+                </div>
+                <div class="achievements-image-box">
+                    <img src="taif-achievements.jpg" alt="Taif Achievements Placeholder" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80'">
+                </div>
+            </div>
+        </section>
+
+        <!-- TAIF'S FAVORITE COLORS EXPERIENCE -->
+        <section class="section-state" style="margin-top: 5rem; border: none; background: transparent; padding: 0;">
+            <div class="colors-container" style="margin-top: 0;">
                 <div class="section-header" style="margin-bottom: 1.2rem;">
                     <h3 style="font-family:'Cinzel',serif; letter-spacing:2px; color:var(--soft-pink);">TAIF'S FAVORITE COLORS</h3>
                     <h4 class="hero-arabic" style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.3rem; text-shadow: none;">ألوان طيف المفضلة</h4>
