@@ -977,6 +977,140 @@
             line-height: 1.8;
         }
 
+        /* ==========================================
+           SECTION NEW: حب طيف ♡ (UNIQUE STYLING)
+           ========================================== */
+        .taif-love-timer-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(31, 16, 53, 0.75), rgba(18, 9, 31, 0.85));
+            border: 1px solid rgba(244, 114, 182, 0.25);
+            border-radius: 24px;
+            padding: 4rem 2.5rem;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .taif-love-timer-section::before {
+            content: '♡';
+            position: absolute;
+            top: -30px;
+            right: -20px;
+            font-size: 12rem;
+            color: var(--soft-pink);
+            opacity: 0.03;
+            pointer-events: none;
+            font-family: serif;
+        }
+
+        .taif-love-timer-header {
+            margin-bottom: 3rem;
+        }
+
+        .taif-love-timer-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #fff, var(--soft-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .taif-love-timer-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .taif-timer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .taif-timer-box {
+            background: rgba(18, 9, 31, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+            box-shadow: inset 0 0 15px rgba(244, 114, 182, 0.05);
+        }
+
+        .taif-timer-box:hover {
+            border-color: var(--soft-pink);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(244, 114, 182, 0.15);
+        }
+
+        .taif-timer-number {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.2;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 0 15px rgba(244, 114, 182, 0.3);
+            direction: ltr; /* Ensure numbers format correctly from left to right */
+            unicode-bidi: isolate;
+        }
+
+        .taif-timer-label {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            font-size: 0.95rem;
+            color: var(--soft-pink);
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .taif-love-phrase {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            color: var(--gold-accent);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-shadow: 0 0 12px rgba(252, 211, 77, 0.25);
+            animation: taifPulseLove 3s ease-in-out infinite;
+        }
+
+        @keyframes taifPulseLove {
+            0%, 100% { opacity: 0.85; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+
+        @media (max-width: 768px) {
+            .taif-timer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .taif-love-timer-section {
+                padding: 3rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .taif-timer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .taif-timer-box {
+                padding: 1.4rem 0.5rem;
+            }
+            .taif-timer-number {
+                font-size: 2rem;
+            }
+        }
+
         /* ELEGANT ENDING FOOTER */
         .cinematic-footer {
             padding: 6rem 2vw 4rem 2vw;
@@ -1320,7 +1454,7 @@
                     <h2>Taif Achievements</h2>
                     <h3>إنجازات طيف</h3>
                     <p>
-                       ذكاؤها الآسر يكاد يضاهي جمالها، حتى يخال المرء أنها جمعت في امرأةٍ واحدة ما عجزت الأرض عن جمعه في نسائها؛ عقلٌ يُبهر، وجمالٌ يُفتن، وحضورٌ لا يُشبه سواه .
+                       ذكاؤها الآسر يكاد يضاهي جمالها، حتى يخال المرء أنها جمعت في امرأةٍ واحدة ما عجزت الأرض عن جمعه في نسائها؛ عقلٌ يُبهر، وجمالٌ يُفتن، حضورٌ لا يُشبه سواه .
                     </p>
                 </div>
                 <div class="achievements-image-box" style="height: auto !important; min-height: unset !important; background: transparent !important; padding: 0 !important; border: none !important;">
@@ -1347,9 +1481,38 @@
                     <div class="color-card">
                         <div class="color-dot pink"></div>
                         <h4>PINK / الوردي</h4>
-                        <p>يمثل الدفء والرقة والجانب الحالم الحنون في عالم طيف والطفولة اللتي لازالت تنبض فيها بعنادها وفرحها وحتى حين تواجه الصعوبات ،  بطفولتها تتخطاها مع قليلاً من دهاء الأطفال .</p>
+                        <p>يمثل الدفء والرقة والجانب الحالم الحنون في عالم طيف والطفولة اللتي لازالت تنبض فيها بعنادهارحها وحتى حين تواجه الصعوبات ،  بطفولتها تتخطاها مع قليلاً من دهاء الأطفال .</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- SECTION NEW: حب طيف ♡ (ADDED DIRECTLY AFTER TAIF'S FAVORITE COLORS) -->
+        <section style="margin-top: 5rem;">
+            <div class="taif-love-timer-section">
+                <div class="taif-love-timer-header">
+                    <h2>حب طيف ♡</h2>
+                    <p class="hero-arabic" style="font-size: 1.15rem; color: var(--text-muted); margin-top: 0.3rem; text-shadow: none;">نبضات متجددة وزمَنٌ لا ينتهي</p>
+                </div>
+                <div class="taif-timer-grid">
+                    <div class="taif-timer-box">
+                        <div class="taif-timer-number" id="taifDays">00</div>
+                        <div class="taif-timer-label">أيام</div>
+                    </div>
+                    <div class="taif-timer-box">
+                        <div class="taif-timer-number" id="taifHours">00</div>
+                        <div class="taif-timer-label">ساعات</div>
+                    </div>
+                    <div class="taif-timer-box">
+                        <div class="taif-timer-number" id="taifMinutes">00</div>
+                        <div class="taif-timer-label">دقائق</div>
+                    </div>
+                    <div class="taif-timer-box">
+                        <div class="taif-timer-number" id="taifSeconds">00</div>
+                        <div class="taif-timer-label">ثواني</div>
+                    </div>
+                </div>
+                <div class="taif-love-phrase">لا زال حبك يزداد ♡</div>
             </div>
         </section>
 
@@ -1577,6 +1740,44 @@
             });
         });
 
+        // TAIF LOVE LIVE TIMER ENGINE (حب طيف ♡)
+        (function() {
+            const STORAGE_KEY = 'taif_love_start_timestamp_v1';
+            let startTimestamp = localStorage.getItem(STORAGE_KEY);
+
+            if (!startTimestamp) {
+                startTimestamp = Date.now();
+                localStorage.setItem(STORAGE_KEY, startTimestamp);
+            } else {
+                startTimestamp = Number(startTimestamp);
+            }
+
+            const daysEl = document.getElementById('taifDays');
+            const hoursEl = document.getElementById('taifHours');
+            const minutesEl = document.getElementById('taifMinutes');
+            const secondsEl = document.getElementById('taifSeconds');
+
+            function updateTaifLoveTimer() {
+                const now = Date.now();
+                let diffInSeconds = Math.floor((now - startTimestamp) / 1000);
+
+                if (diffInSeconds < 0) diffInSeconds = 0;
+
+                const days = Math.floor(diffInSeconds / (3600 * 24));
+                const hours = Math.floor((diffInSeconds % (3600 * 24)) / 3600);
+                const minutes = Math.floor((diffInSeconds % 3600) / 60);
+                const seconds = diffInSeconds % 60;
+
+                if (daysEl) daysEl.innerText = String(days).padStart(2, '0');
+                if (hoursEl) hoursEl.innerText = String(hours).padStart(2, '0');
+                if (minutesEl) minutesEl.innerText = String(minutes).padStart(2, '0');
+                if (secondsEl) secondsEl.innerText = String(seconds).padStart(2, '0');
+            }
+
+            updateTaifLoveTimer();
+            setInterval(updateTaifLoveTimer, 1000);
+        })();
+
         // YouTube Audio Player Toggle Handling (Music On / Music Off) - Enabled from entry page
         const musicBtn = document.getElementById('musicBtn');
         let isPlaying = false;
@@ -1601,3 +1802,4 @@
     </script>
 </body>
 </html>
+
